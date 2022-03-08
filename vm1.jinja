@@ -1,1 +1,22 @@
+resources:
+## a name that you define for the resource
+- name: vm1
 
+## type specifies what type of resource you're creating e.g. compute.v1.instance
+## e.g. cloud sql instance has the type sql.v1beta4.instance
+
+type: compute.v1.instance
+
+    ## properties specified for each resource
+    properties:
+    zone: us-central1-a
+    machineType: zones/us-central1-a/machineTypes/n1-standard-1
+    disk:
+    - deviceName: boot
+    type: PERSISTENT
+    boot: true
+    autoDelete: true
+    initializeParams:
+        sourceImage: projects/debian-cloud/global/images/family/debian-9
+    networkInterfaces:
+    - network: global/networks/default

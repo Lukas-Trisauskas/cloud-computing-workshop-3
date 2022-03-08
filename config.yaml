@@ -1,1 +1,8 @@
+# imports jinja templat file and uses it as the defined resource type
+# for deployment to the cloud
+imports:
+  - path: vm1.jinja
+resources:
+  - name: vm1
+  - type: vm1.jinja
 
